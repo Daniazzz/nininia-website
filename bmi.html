@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Space</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet" href="C:\xampp\htdocs\dashboard\Project1\css\bmi.css">
+	
+	<script>
+        function calculateBMI() {
+            const height = parseFloat(document.getElementById('height').value);
+            const weight = parseFloat(document.getElementById('weight').value);
+            if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+                alert('Please enter valid height and weight values.');
+                return;
+            }
+            const bmi = (weight / ((height / 100) ** 2)).toFixed(2);
+            let category = '';
+            if (bmi < 18.5) {
+                category = 'Underweight';
+            } else if (bmi < 24.9) {
+                category = 'Normal weight';
+            } else if (bmi < 29.9) {
+                category = 'Overweight';
+            } else {
+                category = 'Obesity';
+            }
+            document.getElementById('bmi-result').textContent = `Your BMI is ${bmi} (${category})`;
+        }
+    </script>
+	
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Nini.Space</h1>
+            <div class="dropdown">
+                <button class="dropbtn">About Me</button>
+                <div class="dropdown-content">
+					<a href="home.html">Home</a>
+                    <a href="photo.html">Photo Gallery</a>
+					<a href="myself.html">Myself</a>
+                    <a href="edu.html">Education</a>
+                    <a href="passion.html">Passion</a>
+                    <a href="comment.html">Comment</a>
+                    <a href="bmi.html">BMI Calculator</a>
+                </div>
+            </div>
+        </header>
+
+         <section class="bmi-section">
+            <h2>BMI Calculator</h2>
+            <form class="bmi-form" onsubmit="event.preventDefault(); calculateBMI();">
+                <input type="number" id="height" placeholder="Enter your height in cm" required>
+                <input type="number" id="weight" placeholder="Enter your weight in kg" required>
+                <button type="submit">Calculate BMI</button>
+            </form>
+            <div id="bmi-result" class="bmi-result"></div>
+        </section>
+		
+    </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="social-media">
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:example@example.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2024 Nini.Space. All rights reserved.</p>
+    </footer>
+</body>
+</html>
