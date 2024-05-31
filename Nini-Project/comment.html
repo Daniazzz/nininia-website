@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Space</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="stylesheet" href="C:\xampp\htdocs\dashboard\Project1\css\comment.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Nini.Space</h1>
+            <div class="dropdown">
+                <button class="dropbtn">About Me</button>
+                <div class="dropdown-content">
+                    <a href="home.html">Home</a>
+                    <a href="photo.html">Photo Gallery</a>
+                    <a href="myself.html">Myself</a>
+                    <a href="edu.html">Education</a>
+                    <a href="passion.html">Passion</a>
+                    <a href="comment.html">Comment</a>
+                    <a href="bmi.html">BMI Calculator</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="comment-form">
+            <h2>Comment Form</h2>
+            <form id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required><br>
+                <label><input type="radio" name="gender" value="Male" checked> Male</label><br>
+                <label><input type="radio" name="gender" value="Female"> Female</label><br>
+                <br>
+                <input type="email" name="email" placeholder="Your Email" required><br>
+                <textarea name="comment" placeholder="Enter your comment here" rows="4" required></textarea><br>
+                <input type="submit" value="Send">
+            </form>
+			 <div class="success-message" id="successMessage">
+                Thank you! Your comment has been submitted.
+            </div>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="social-media">
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:example@example.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2024 Nini.Space. All rights reserved.</p>
+    </footer>
+	
+	<script>
+		document.getElementById('contact-form').addEventListener('submit', function(event) {
+			event.preventDefault(); // Prevent the default form submission
+			
+			// Display the success message as a pop-up
+			window.alert('Thank you! Your comment has been submitted.');
+		});
+	</script>
+
+</body>
+</html>
+
